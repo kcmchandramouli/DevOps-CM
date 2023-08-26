@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to CM’s DevOps documentation! &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="_static/tippy\index.74dfd0ea-6dc8-4712-aab5-7d938812d94d.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to CM’s DevOps documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-cm-s-devops-documentation">
+<h1>Welcome to CM’s DevOps documentation!<a class="headerlink" href="#welcome-to-cm-s-devops-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="introduction-to-containers-and-docker">
+<h1>1.Introduction to Containers and Docker<a class="headerlink" href="#introduction-to-containers-and-docker" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Containerization is a technology that allows you to package an application and its dependencies into a standardized unit called a container. Containers provide a consistent runtime environment, ensuring that the application runs the same way across different environments, be it development, testing, or production. Docker is a leading platform that enables containerization, revolutionizing the way applications are developed, deployed, and managed.</p>
+<dl class="simple">
+<dt><strong>i. Understanding containerization:</strong></dt><dd><p>Containerization solves the problem of “it works on my machine” by encapsulating an application, its libraries, dependencies, and runtime environment into a single unit. This unit, the container, is isolated from the host system and other containers, ensuring consistent behavior regardless of the underlying infrastructure.</p>
+</dd>
+</dl>
+<p><strong>Key features of containerization include:</strong></p>
+<ul class="simple">
+<li><p><strong>Isolation:</strong> Containers provide process and filesystem isolation, allowing applications to run without interfering with each other. This isolation also enhances security.</p></li>
+<li><p><strong>Portability:</strong> Containers can run on any system that supports the container runtime, making it easy to move applications between different environments.</p></li>
+<li><p><strong>Resource Efficiency:</strong> Containers share the host OS kernel, reducing overhead compared to virtual machines.</p></li>
+<li><p><strong>Rapid Deployment:</strong> Containers start quickly, making them ideal for dynamic scaling and microservices architecture.</p></li>
+<li><p><strong>Consistency:</strong> Containerization ensures that the application’s runtime environment is consistent across various stages of the development and deployment pipeline.</p></li>
+</ul>
+<p><strong>ii. Benefits of Docker:</strong></p>
+<blockquote>
+<div><p>Docker, as a containerization platform, offers several advantages:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Efficiency:</strong> Docker containers share the host OS kernel, reducing resource consumption compared to virtual machines, which require separate OS instances.</p></li>
+<li><p><strong>Portability:</strong> Docker containers are self-contained units that can run consistently across different environments, from a developer’s laptop to a production server.</p></li>
+<li><p><strong>Isolation:</strong> Containers provide process and filesystem isolation, enhancing security and minimizing conflicts between applications.</p></li>
+<li><p><strong>Consistency:</strong> Docker ensures that the development, testing, and production environments are identical, reducing the likelihood of “it works on my machine” issues.</p></li>
+<li><p><strong>Version Control:</strong> Docker images are versioned, enabling reproducible builds and simplifying rollbacks.</p></li>
+<li><p><strong>Scalability:</strong> Docker enables dynamic scaling by quickly starting and stopping containers as needed.</p></li>
+<li><p><strong>DevOps Integration:</strong> Docker facilitates the DevOps approach by streamlining the process of packaging, deploying, and managing applications.</p></li>
+<li><p><strong>Microservices:</strong> Docker is well-suited for building and managing microservices architectures due to its lightweight nature and efficient scaling.</p></li>
+</ul>
+<p><strong>iii. Docker vs. Virtual Machines:</strong></p>
+<p>While both Docker containers and virtual machines (VMs) offer isolation and encapsulation, there are key differences:</p>
+<p><strong>Docker Containers:</strong></p>
+<ul class="simple">
+<li><p>Share the host OS kernel, making them lightweight.</p></li>
+<li><p>Start quickly, often in milliseconds.</p></li>
+<li><p>Use less memory and disk space compared to VMs.</p></li>
+<li><p>Have less overhead due to shared resources.</p></li>
+<li><p>Require less management and maintenance.</p></li>
+<li><p>Suitable for microservices architecture and dynamic scaling.</p></li>
+</ul>
+<p><strong>Virtual Machines:</strong></p>
+<ul class="simple">
+<li><p>Run a complete guest OS on top of the host OS.</p></li>
+<li><p>Take longer to start, typically in seconds or more.</p></li>
+<li><p>Consume more memory and disk space.</p></li>
+<li><p>Have higher overhead due to separate OS instances.</p></li>
+<li><p>Require more management and maintenance.</p></li>
+<li><p>Suitable for running multiple applications with different OS requirements.</p></li>
+</ul>
+<p>In summary, Docker’s containerization approach offers greater efficiency, portability, and scalability compared to traditional virtual machines. Docker’s lightweight nature and consistent environments make it an ideal choice for modern application development and deployment.</p>
+</section>
+<section id="installation-and-setup">
+<h1>2.Installation and Setup<a class="headerlink" href="#installation-and-setup" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Installing Docker involves setting up the Docker Engine, which includes the Docker CLI (Command Line Interface) and the Docker Daemon (server). Here’s a detailed guide on how to install Docker on Linux, macOS, and Windows, along with basic configuration and settings.</p>
+<p><strong>i.Installing Docker on Linux:</strong></p>
+<p>Docker can be installed on various Linux distributions using package managers. The instructions may slightly vary depending on the distribution, but the general steps are as follows:</p>
+<ul class="simple">
+<li><p>Update the package index:   <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p></li>
+<li><p>Install necessary packages to allow the use of Docker repositories over HTTPS:      <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apt-transport-https</span> <span class="pre">ca-certificates</span> <span class="pre">curl</span> <span class="pre">software-properties-common</span></code></p></li>
+<li><p>Add the Docker GPG key:     <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-fsSL</span> <span class="pre">https://download.docker.com/linux/ubuntu/gpg</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">gpg</span> <span class="pre">--dearmor</span> <span class="pre">-o</span> <span class="pre">/usr/share/keyrings/docker-archive-keyring.gpg</span></code></p></li>
+<li><p>Add the Docker repository:  <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;deb</span> <span class="pre">[signed-by=/usr/share/keyrings/docker-archive-keyring.gpg]</span> <span class="pre">https://download.docker.com/linux/ubuntu</span> <span class="pre">$(lsb_release</span> <span class="pre">-cs)</span> <span class="pre">stable&quot;</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">tee</span> <span class="pre">/etc/apt/sources.list.d/docker.list</span> <span class="pre">&gt;</span> <span class="pre">/dev/null</span></code></p></li>
+<li><p>Update the package index again and install Docker:  <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">docker-ce</span> <span class="pre">docker-ce-cli</span> <span class="pre">containerd.io</span></code></p></li>
+<li><p>Start and enable the Docker service:    <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">docker</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">docker</span></code></p></li>
+</ul>
+<p><strong>ii.   Installing Docker on macOS:</strong></p>
+<p>Docker Desktop provides an easy way to install and run Docker on macOS:</p>
+<ul class="simple">
+<li><p>Download Docker Desktop for macOS from the Docker website.</p></li>
+<li><p>Double-click the downloaded .dmg file to open the installer.</p></li>
+<li><p>Drag the Docker application to the Applications folder.</p></li>
+<li><p>Open Docker from the Applications folder. It will guide you through the setup process.</p></li>
+</ul>
+<p><strong>iii.  Installing Docker on Windows:</strong></p>
+<p>Docker Desktop is also available for Windows and provides a user-friendly installation process:</p>
+<ul class="simple">
+<li><p>Download Docker Desktop for Windows from the Docker website.</p></li>
+<li><p>Double-click the downloaded .exe file to start the installer.</p></li>
+<li><p>Follow the installer’s instructions to complete the installation.</p></li>
+</ul>
+<p><strong>Basic Configuration and Settings:</strong></p>
+<p>After installing Docker, there are a few basic configurations you might want to consider:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Running Docker Without Sudo (Linux only):</dt><dd><p>By default, Docker commands require root privileges. You can add your user to the docker group to run Docker commands without sudo: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-aG</span> <span class="pre">docker</span> <span class="pre">$USER</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Docker Daemon Configuration:</dt><dd><p>Docker’s daemon configuration is usually stored in a configuration file (e.g., /etc/docker/daemon.json on Linux). You can customize settings such as storage options, network settings, and more.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Resource Limits:</dt><dd><p>You can set resource limits (CPU, memory) for containers to prevent them from consuming excessive resources.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Network Configuration:</dt><dd><p>Docker provides various network modes. You can configure Docker’s networking options based on your needs, such as bridge networks or user-defined networks.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Registry Configuration:</dt><dd><p>Docker images are typically pulled from Docker Hub, but you can also configure Docker to use other registries.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Proxy Settings:</dt><dd><p>If you’re behind a proxy, you might need to configure Docker to work through it.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Authentication and Security:</dt><dd><p>You can configure authentication settings to securely pull and push images from/to Docker Hub or other registries.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Remember that these are just some basic configuration options. Docker offers extensive customization to suit your needs but be cautious while modifying configuration files to avoid unintended issues. Always consult Docker’s official documentation for more detailed information and best practices regarding setup and configuration.</p>
+</section>
+<section id="docker-basics">
+<h1>3.Docker Basics<a class="headerlink" href="#docker-basics" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Understanding the fundamental concepts of Docker is crucial for effectively working with containers. This section will delve into the core components of Docker, how to run your first container, essential Docker commands, and the role of Docker registry and Docker Hub.</p>
+<p><strong>i.    Docker Engine Components:</strong>
+Docker Engine is the core of the Docker platform, responsible for building, running, and managing containers. It consists of two main components:</p>
+<ul class="simple">
+<li><p><strong>Docker CLI (Command Line Interface):</strong> The command-line tool that allows users to interact with Docker. It provides a set of commands to manage images, containers, networks, volumes, and more.</p></li>
+<li><p><strong>Docker Daemon:</strong> The background service that manages Docker containers. It handles container execution, image management, networking, and other core functionalities. The Docker Daemon listens for Docker API requests and carries out the requested actions.</p></li>
+</ul>
+<p><strong>ii.   Running Your First Container:</strong>
+To run your first Docker container, follow these steps:
+-   Open a terminal or command prompt.</p>
+<ul class="simple">
+<li><p><strong>Pull an image from Docker Hub (if not already present on your system):</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">hello-world</span></code></p></li>
+<li><p><strong>Run a container using the pulled image:</strong> <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code></p></li>
+<li><p>You’ll see a message indicating that the container is running and has successfully executed.The output will provide information about Docker’s basic functionality.</p></li>
+</ul>
+<p><strong>iii.    Basic Docker Commands:</strong>
+Here are some of the basic Docker commands you’ll frequently use:
+-   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run:</span></code> Create and start a container from an image.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull:</span></code> Download an image from a registry.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images:</span></code> List available images on your system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps:</span></code> List running containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a:</span></code> List all containers, including stopped ones.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec:</span></code> Run a command in a running container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop:</span></code> Stop a running container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start:</span></code> Start a stopped container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm:</span></code> Remove a container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi:</span></code> Remove an image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs:</span></code> Display the logs of a container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect:</span></code> Display detailed information about a container or image.</p></li>
+</ul>
+<p><strong>iv.   Docker Registry and Docker Hub:</strong>
+A Docker registry is a repository for storing Docker images. The most well-known registry is Docker Hub, which hosts a wide variety of public Docker images. Docker Hub allows you to pull images for various software and services without having to build them from scratch.</p>
+<ul class="simple">
+<li><p><strong>Docker Registry:</strong> A service that stores and manages Docker images. You can use public registries like Docker Hub or set up private registries for your organization.</p></li>
+<li><p><strong>Docker Hub:</strong> A cloud-based public registry that hosts a vast collection of Docker images shared by the community. It’s a go-to resource for finding pre-built images.</p></li>
+<li><p><strong>Docker Pull:</strong> The command to download images from a Docker registry. For example:    docker pull nginx.</p></li>
+<li><p><strong>Docker Push:</strong> The command to upload your own Docker images to a registry, typically used for private images: <strong>docker push username/image-name:tag</strong></p></li>
+</ul>
+</section>
+<section id="creating-docker-images">
+<h1>4.Creating Docker Images<a class="headerlink" href="#creating-docker-images" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Creating Docker images is a fundamental skill in the Docker ecosystem. Images serve as blueprints for containers, encapsulating an application’s code, dependencies, and configuration. This section will cover creating images using Dockerfiles, understanding Dockerfile syntax, best practices, building images, and the concepts of image layers and caching.</p>
+<p><strong>1.Introduction to Dockerfile:</strong></p>
+<p>A Dockerfile is a text file that contains a set of instructions for building a Docker image. It defines the environment, packages, configurations, and commands necessary to create an image that can be run as a container. Dockerfiles enable reproducible and consistent image builds.</p>
+<p><strong>2.Dockerfile Syntax and Best Practices:</strong></p>
+<ul class="simple">
+<li><p><strong>Base Image:</strong> Start with a base image that provides the foundation for your application. Use official images from Docker Hub when available.</p></li>
+<li><p><strong>Instructions:</strong></p></li>
+</ul>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># FROM: Specifies the base image.</span>
+<span class="c"># RUN: Executes commands in the image during build.</span>
+<span class="c"># COPY or ADD: Copies files and directories from the host into the image.</span>
+<span class="c"># WORKDIR: Sets the working directory for subsequent instructions.</span>
+<span class="c"># ENV: Sets environment variables in the image.</span>
+<span class="c"># EXPOSE: Documents which ports the container listens on.</span>
+<span class="c"># CMD or ENTRYPOINT: Defines the default command when the container starts.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Layering:</strong> Each instruction in a Dockerfile creates a new layer in the image. Layers are reusable and cached, allowing faster image builds.</p></li>
+<li><p><strong>Minimize Layers:</strong> Combine commands using &amp;&amp; to minimize layers. This reduces the final image size and build time.</p></li>
+<li><p><strong>Clear and Concise:</strong> Keep the Dockerfile readable and concise. Use comments to explain complex or important parts.</p></li>
+<li><p><strong>Order of Operations:</strong> Place frequently changing instructions (e.g., COPY or ADD) at the end of the Dockerfile to utilize Docker’s build caching efficiently.</p></li>
+<li><p><strong>Avoid Unnecessary Files:</strong> Exclude unnecessary files from the image. Use .dockerignore to specify files that shouldn’t be included.</p></li>
+</ul>
+<p><strong>3.Building Images using Dockerfile:</strong></p>
+<p>To build an image using a Dockerfile:</p>
+<ul class="simple">
+<li><p>Create a text file named Dockerfile (with no file extension) in your application’s directory.</p></li>
+<li><p>Write the necessary instructions in the Dockerfile. For example:</p></li>
+</ul>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># Use an official Python runtime as the base image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.9-slim</span>
+
+<span class="c"># Set the working directory to /app</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Copy the current directory contents into the container at /app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+
+<span class="c"># Install any needed packages specified in requirements.txt</span>
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--trusted-host<span class="w"> </span>pypi.python.org<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Make port 80 available to the world outside this container</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span>
+
+<span class="c"># Define environment variable</span>
+<span class="k">ENV</span><span class="w"> </span>NAME<span class="w"> </span>World
+
+<span class="c"># Run app.py when the container launches</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a terminal in the directory containing the Dockerfile.</p></li>
+<li><dl class="simple">
+<dt>Build the Docker image using the docker build command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">image-name:tag</span> <span class="pre">.</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>4.Image Layers and Caching:</strong></p>
+<p>Docker uses a layered file system for images, where each instruction in the Dockerfile creates a new layer. These layers are cached, making subsequent builds faster when instructions haven’t changed.</p>
+<ul class="simple">
+<li><p><strong>Caching:</strong> If a layer has been built before and hasn’t changed, Docker uses the cached layer instead of rebuilding it. This speeds up image creation.</p></li>
+<li><p><strong>Invalidating Cache:</strong> If an instruction changes, all subsequent layers are invalidated. To take advantage of caching, place commands that change less frequently at the beginning of the Dockerfile.</p></li>
+<li><p><strong>Efficient Layering:</strong> Minimize the number of layers by chaining commands with &amp;&amp;. This reduces the final image size and build time.</p></li>
+</ul>
+</section>
+<section id="container-management">
+<h1>5.Container Management<a class="headerlink" href="#container-management" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Managing containers effectively is essential to leverage the benefits of Docker. This section covers the container lifecycle, Docker run options for configuration, and techniques for working with multiple containers.</p>
+<dl class="simple">
+<dt><strong>Container Lifecycle:</strong></dt><dd><p>Containers have a lifecycle that includes several states: created, running, paused, restarting, and stopped. Understanding these states is crucial for proper container management.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><strong>Create:</strong> Containers are created from Docker images using the docker create command. This command sets up a container but doesn’t start it.</p></li>
+<li><p><strong>Start:</strong> The docker start command initiates a stopped container. Containers can also be created and started in a single step using the docker run command.</p></li>
+<li><p><strong>Pause:</strong> The docker pause command suspends a container’s processes, allowing it to be temporarily halted without stopping it.</p></li>
+<li><p><strong>Unpause/Resume:</strong> The docker unpause command resumes a paused container’s processes.</p></li>
+<li><p><strong>Stop:</strong> The docker stop command gracefully stops a running container, allowing it to shut down processes and save state. You can specify a time limit for graceful termination. Use docker kill for an immediate stop.</p></li>
+<li><p><strong>Remove:</strong> The docker rm command deletes a stopped container. Use the -f flag to remove a running container forcefully.</p></li>
+</ul>
+<p><strong>Docker Run Options:</strong></p>
+<p>The docker run command offers a variety of options to configure container behavior:</p>
+<ul class="simple">
+<li><p><strong>Port Mapping:</strong> Use the -p flag to map ports between the host and the container. For example, -p 8080:80 maps port 8080 on the host to port 80 in the container.</p></li>
+<li><p><strong>Environment Variables:</strong> Pass environment variables to containers using the -e flag. For example, -e MY_VARIABLE=my_value.</p></li>
+<li><p><strong>Volumes:</strong> Mount volumes between the host and container using the -v flag. This allows persistent storage and data sharing.</p></li>
+<li><p><strong>Detached Mode:</strong> Run containers in the background by adding the -d flag to the docker run command.</p></li>
+<li><p><strong>Interactive Mode:</strong> Use the -it flags together to start an interactive session in the container, allowing direct interaction with processes.</p></li>
+<li><p><strong>Container Name:</strong> Assign a custom name to the container using the –name flag.</p></li>
+</ul>
+<p><strong>Working with Multiple Containers:</strong></p>
+<p>Containers often work together to form complete applications. Docker provides several features for managing interactions between multiple containers.</p>
+<ul class="simple">
+<li><p><strong>Linking Containers:</strong> Container linking is an older technique that allows one container to reference another by name. However, this method is now mostly replaced by user-defined networks.</p></li>
+<li><p><strong>Networking:</strong> Docker supports various networking modes. Containers on the same network can communicate using container names as hostnames.</p></li>
+<li><p><strong>User-Defined Networks:</strong> Creating a user-defined network with the docker network create command allows containers to communicate by their service names. This offers better isolation and control than container linking.</p></li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Proper container management is essential for efficiently running and maintaining your Dockerized applications. Understanding the container lifecycle, configuring container options with docker run, and implementing effective container communication methods will help you build and manage robust, scalable, and well-connected containerized applications.</p>
+</section>
+<section id="docker-compose">
+<h1>6.Docker Compose<a class="headerlink" href="#docker-compose" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Docker Compose is a tool for defining and running multi-container applications. It allows you to define the services, networks, and volumes that make up your application in a single, human-readable YAML file. Docker Compose simplifies the process of managing complex applications by providing a unified way to configure, start, and stop multiple containers.</p>
+<p><strong>Defining Multi-Container Applications with docker-compose.yml:</strong></p>
+<p>A docker-compose.yml file is used to define the structure of your multi-container application. This file contains the configuration for all the services, networks, and volumes that your application requires.</p>
+<p>Here’s a basic example of a docker-compose.yml file for a simple web application with a web server and a database:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span>
+<span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:latest</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myuser</span>
+<span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mypassword</span>
+</pre></div>
+</div>
+<p><strong>Services, Networks, and Volumes in Compose:</strong></p>
+<p><strong>Services:</strong> A service in Docker Compose is equivalent to a container. Each service specifies the image to use, along with other configuration options like ports, environment variables, and volumes. Services communicate with each other through network bridges created by Compose.</p>
+<p><strong>Networks:</strong> Docker Compose automatically creates a network for your application, allowing services to communicate using service names as hostnames. You can also create custom user-defined networks to isolate services and control communication between them.</p>
+<p><strong>Volumes:</strong> Volumes defined in Docker Compose allow for persistent storage. Volumes can be mounted into containers, ensuring data persistence even when containers are stopped or removed.</p>
+<p><strong>Running and Managing Applications with Docker Compose:</strong></p>
+<p><strong>1.Running Services:</strong> Use the docker-compose up command to start your application defined in the docker-compose.yml file. The -d flag runs the services in detached mode (in the background). For example:    <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span></code></p>
+<p><strong>2.View Logs:</strong> To view the logs of all services, use: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">logs</span></code></p>
+<p><strong>3.Stopping Services</strong>: To stop and remove all containers defined in the <cite>docker-compose.yml</cite> file, use:   <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span></code></p>
+<p><strong>4.Scaling Services:</strong> You can scale services by specifying the desired number of replicas. For example, to scale the <cite>web</cite> service to 3 replicas: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">--scale</span> <span class="pre">web=3</span></code></p>
+<p><strong>5.Managing Networks:</strong> Docker Compose creates a network for your application. You can also create additional networks to control communication between services.</p>
+<p><strong>6.Building Images:</strong> If you have services that require custom images, you can build them using the docker-compose build command.</p>
+<p><strong>7.Environment Variables:</strong> Define environment variables in the docker-compose.yml file using the environment key under each service.</p>
+<p><strong>Conclusion:</strong></p>
+<p>Docker Compose simplifies the management of multi-container applications by providing a declarative way to define, configure, and run services, networks, and volumes. By using a single docker-compose.yml file, you can efficiently orchestrate your application’s components, making it easier to develop, test, and deploy complex systems. With Docker Compose, you can streamline your development and deployment process while maintaining consistency across different environments.</p>
+</section>
+<section id="advanced-image-techniques">
+<h1>7.Advanced Image Techniques<a class="headerlink" href="#advanced-image-techniques" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>As you delve deeper into Docker, you’ll encounter advanced techniques that allow you to optimize your Docker images for efficiency, security, and maintainability. This section covers multi-stage builds, optimizing image size, image tagging and versioning, and pushing/pulling images from Docker Hub.</p>
+<p><strong>1.Using Multi-Stage Builds:</strong></p>
+<p>Multi-stage builds are a powerful feature of Docker that allow you to create more efficient and smaller images. This technique involves defining multiple build stages in a single Dockerfile. Each stage can have its own base image and set of instructions. It’s particularly useful for compiling code and then copying only the necessary artifacts into the final image.</p>
+<p>Here’s a simplified example of a multi-stage build for a Go application:</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.16</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>myapp
+
+<span class="c"># Final stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/app/myapp<span class="w"> </span>.
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;./myapp&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>2.Optimizing Image Size:</strong></p>
+<p>Optimizing image size is important for faster deployments and reduced storage costs. Here are some strategies:</p>
+<ul class="simple">
+<li><p><strong>Use Official Base Images:</strong> Official images are often optimized and regularly updated.</p></li>
+<li><p><strong>Minimize Layers:</strong> Combine commands in your Dockerfile to minimize the number of layers. This reduces the size of the image.</p></li>
+<li><p><strong>Alpine Linux:</strong> Alpine Linux is a lightweight base image that results in smaller images.</p></li>
+<li><p><strong>Remove Unnecessary Files:</strong> Clean up unnecessary files after installing packages or building the application.</p></li>
+<li><p><strong>Multi-Stage Builds:</strong> As mentioned earlier, multi-stage builds allow you to create smaller images by only copying necessary files.</p></li>
+</ul>
+<p><strong>3.Docker Image Tagging and Versioning:</strong></p>
+<p>Tagging and versioning your Docker images helps track and manage different versions of your application. Tags are labels attached to images that indicate a specific version or configuration.</p>
+<ul class="simple">
+<li><p><strong>Tagging:</strong> Use the -t flag when building an image to assign a tag. For example:   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">myapp:latest</span> <span class="pre">.</span></code></p></li>
+<li><p><strong>Versioning:</strong> Tags can include version numbers, release dates, or other meaningful identifiers. For example:  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">myapp:1.0.0</span> <span class="pre">.</span></code></p></li>
+</ul>
+<p><strong>4.Pushing and Pulling Images from Docker Hub:</strong></p>
+<p>Docker Hub is a central repository for Docker images. You can push your custom images to Docker Hub for sharing and distribution.</p>
+<ul class="simple">
+<li><p><strong>Pushing Images:</strong></p>
+<ul>
+<li><p>Log in to Docker Hub using docker login.</p></li>
+<li><p>Tag your image with your Docker Hub username and desired repository name.</p></li>
+<li><p>Push the tagged image to Docker Hub:    <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">username/repository:tag</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Pulling Images:</strong></p>
+<ul>
+<li><p>To pull an image from Docker Hub:   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">username/repository:tag</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Advanced Docker image techniques provide you with the tools to create efficient, optimized, and well-organized images. Multi-stage builds streamline the image creation process, while image size optimization enhances deployment efficiency. Proper tagging and versioning allow for easy tracking and management of image versions. Pushing and pulling images from Docker Hub facilitate sharing your custom images with the community or within your organization. By mastering these techniques, you can enhance your Docker image management skills and create more efficient and reliable containerized applications.</p>
+</section>
+<section id="networking-in-docker">
+<h1>8.Networking in Docker<a class="headerlink" href="#networking-in-docker" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Networking is a crucial aspect of containerization, allowing containers to communicate with each other and external systems. Docker provides various networking modes and features to manage container networking efficiently. This section covers Docker’s networking modes, creating user-defined networks, and utilizing network aliases for DNS resolution.</p>
+<p><strong>Docker Networking Modes:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Bridge Network:</strong> The default networking mode for containers. Containers on the same bridge network can communicate with each other using internal IP addresses. Containers are isolated from the host and other networks unless explicitly configured.</p></li>
+<li><p><strong>Host Network:</strong> In this mode, containers share the host’s networking stack, including its IP address and network interfaces. This mode offers better performance but may introduce potential security risks.</p></li>
+<li><p><strong>Overlay Network:</strong> Overlay networks are used for connecting containers across multiple Docker hosts. They are mainly used in swarm mode for orchestrating services across a cluster of machines.</p></li>
+</ol>
+<p><strong>Creating and Managing User-Defined Networks:</strong></p>
+<p>User-defined networks provide better isolation, security, and flexibility compared to the default bridge network. They allow containers to communicate using DNS names or service discovery. To create and manage user-defined networks:</p>
+<ul class="simple">
+<li><p>Creating a Network:     docker network create mynetwork</p></li>
+<li><p>Connecting Containers to a Network:     docker run –network=mynetwork myimage</p></li>
+<li><p>Inspecting a Network:       docker network inspect mynetwork</p></li>
+<li><p>Removing a Network:     docker network rm mynetwork</p></li>
+</ul>
+<p><strong>Network Aliases and DNS Resolution:</strong></p>
+<p>Network aliases and DNS resolution enhance container communication by allowing you to refer to containers by their service name within the same network.</p>
+<ol class="arabic simple">
+<li><p><strong>Network Aliases:</strong> Containers in the same network can have multiple network aliases. This is useful when you want a container to be reachable by multiple names.</p></li>
+<li><p><strong>DNS Resolution:</strong> Containers in the same user-defined network can resolve each other’s DNS names using their service names. This simplifies communication and eliminates the need to remember IP addresses.</p></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>Networking is a critical component of Docker that enables containers to communicate and interact effectively. Understanding the different networking modes, creating user-defined networks, and utilizing network aliases and DNS resolution enhances container communication, security, and isolation. Docker’s networking features allow you to build complex applications while maintaining robust and isolated networking environments.</p>
+</section>
+<section id="data-management-with-volumes">
+<h1>9.Data Management with Volumes<a class="headerlink" href="#data-management-with-volumes" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Managing data within Docker containers is a challenge due to the ephemeral nature of containers. Docker volumes provide a solution by enabling persistent data storage and sharing between containers and the host system. This section explains Docker volumes, the differences between bind mounts and volumes, and how volumes facilitate persistent data storage.</p>
+<p><strong>Introduction to Docker Volumes:</strong></p>
+<p>Docker volumes are directories or file systems that exist outside of a container’s file system and can be mounted into containers. They allow data to persist even when containers are stopped or removed. Volumes provide a way to separate data from the container, making it easier to manage, backup, and share data.</p>
+<p><strong>Bind Mounts vs. Volumes:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Bind Mounts:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Bind mounts allow you to mount a specific file or directory from the host into a container. The container can read and write data directly to the host’s file system.</p></li>
+<li><p>Useful for sharing files between the host and container, but not recommended for long-term data storage or cross-host data sharing.</p></li>
+<li><p>Offers less isolation between the host and container compared to volumes.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Volumes:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Volumes are managed by Docker and stored outside of the container’s file system. They offer better data separation and persistence.</p></li>
+<li><p>Ideal for persistent data storage, backups, and sharing data between containers.</p></li>
+<li><p>Provides better integration with Docker’s tooling, such as data volume containers and Docker Compose.</p></li>
+</ul>
+<p><strong>Persistent Data Storage Using Volumes:</strong></p>
+<p>To use volumes for persistent data storage:</p>
+<ul class="simple">
+<li><p><strong>Creating a Volume:</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">create</span> <span class="pre">myvolume</span></code></p></li>
+<li><p><strong>Mounting a Volume in a Container:</strong>   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">myvolume:/path/in/container</span> <span class="pre">myimage</span></code></p></li>
+<li><p><strong>Inspecting a Volume:</strong>    <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">inspect</span> <span class="pre">myvolume</span></code></p></li>
+<li><p><strong>Removing a Volume:</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">rm</span> <span class="pre">myvolume</span></code></p></li>
+</ul>
+<p><strong>Using Volumes in Docker Compose:</strong></p>
+<p>Docker Compose provides a convenient way to manage volumes within your application’s stack. You can define volumes in your docker-compose.yml file and attach them to services:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="nt">app</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myvolume:/path/in/container</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="nt">myvolume</span><span class="p">:</span>
+</pre></div>
+</div>
+<p><strong>Volume Types:</strong></p>
+<p>Docker supports several volume types:</p>
+<ul class="simple">
+<li><p>Local Volumes: Stored on the host’s file system, these volumes are managed by Docker and can be shared among containers.</p></li>
+<li><p>Named Volumes: Managed by Docker and assigned a name. They offer better management and are recommended for most use cases.</p></li>
+<li><p>Anonymous Volumes: Similar to named volumes, but without a user-defined name. They are often used for temporary data.</p></li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Docker volumes play a critical role in managing data within containers, enabling persistent storage, backups, and data sharing. They provide a way to separate data from the ephemeral nature of containers, enhancing data management and making it easier to build reliable and resilient applications. By understanding the differences between bind mounts and volumes and leveraging volumes effectively, you can ensure that your containers have access to the necessary data while maintaining data persistence and integrity.</p>
+</section>
+<section id="docker-security">
+<h1>10.Docker Security<a class="headerlink" href="#docker-security" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Ensuring the security of Docker containers is paramount to safeguarding your applications and data. This section explores Docker’s security features, best practices for securing containers, vulnerability scanning, and advancements in user namespaces and rootless Docker for enhanced security.</p>
+<p><strong>Container Isolation and Security Features:</strong></p>
+<p>Docker provides several security features to isolate containers from the host system and other containers:</p>
+<ol class="arabic simple">
+<li><p><strong>Namespace Isolation:</strong> Docker uses Linux namespaces to isolate containers’ process, network, filesystem, and other resources. This prevents processes within one container from accessing resources of other containers.</p></li>
+<li><p><strong>Control Groups (Cgroups):</strong> Docker uses cgroups to limit and manage the resources (CPU, memory, etc.) that containers can consume.</p></li>
+<li><p><strong>Read-Only Filesystems:</strong> You can set containers to use read-only filesystems to prevent tampering or unauthorized modification.</p></li>
+<li><p><strong>AppArmor and SELinux:</strong> Docker supports AppArmor and SELinux security profiles for enforcing fine-grained access controls on container processes.</p></li>
+<li><p><strong>Seccomp Profiles:</strong> Seccomp allows restricting system calls that a container can make, reducing the attack surface.</p></li>
+<li><p><strong>User and Group Isolation:</strong> Containers can run as non-root users, minimizing potential damage from security breaches.</p></li>
+</ol>
+<p><strong>Best Practices for Securing Docker Containers:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Use Official Images:</strong> Choose official images from Docker Hub or trusted repositories. Official images are maintained, updated, and generally more secure.</p></li>
+<li><p><strong>Regular Updates:</strong> Keep your base images, applications, and libraries up to date to address security vulnerabilities.</p></li>
+<li><p><strong>Least Privilege:</strong> Run containers with minimal privileges and only the necessary capabilities.</p></li>
+<li><p><strong>Isolate Networks:</strong> Use user-defined networks to isolate containers and control communication between them.</p></li>
+<li><p><strong>Volume Permissions:</strong> Apply appropriate permissions to mounted volumes to prevent unauthorized access to data.</p></li>
+<li><p><strong>Limit Resources:</strong> Set resource limits (CPU, memory) to prevent containers from consuming excessive resources.</p></li>
+<li><p><strong>Container Scanning:</strong> Regularly scan images for vulnerabilities before deploying them. Consider using security scanning tools like Clair or Trivy.</p></li>
+</ol>
+<p><strong>Scanning Images for Vulnerabilities:</strong></p>
+<p>To scan images for vulnerabilities, you can use various tools like Anchore, Aqua Trivy, or Clair. These tools analyze the software packages within an image and identify any known vulnerabilities. By incorporating vulnerability scanning into your CI/CD pipeline, you can catch vulnerabilities early in the development process.</p>
+<p><strong>User Namespaces and Rootless Docker:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>User Namespaces:</strong> User namespaces allow you to map user and group IDs inside a container to different IDs outside the container, enhancing isolation and security. This reduces the impact of potential privilege escalation attacks.</p></li>
+<li><p><strong>Rootless Docker:</strong> Rootless Docker runs the Docker daemon and containers with reduced privileges, decreasing the attack surface. It’s particularly useful for scenarios where running Docker as root is undesirable.</p></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>Docker provides various security features and best practices to ensure the security of your containerized applications. By understanding and implementing container isolation, resource limits, network segregation, and image scanning, you can significantly enhance the security posture of your Docker environment. User namespaces and rootless Docker further advance security by reducing the potential attack surface and minimizing the impact of security breaches. Staying vigilant, adopting security best practices, and regularly updating your container images are essential steps in maintaining the integrity and safety of your Dockerized applications.</p>
+</section>
+<section id="dockerfile-best-practices">
+<h1>11.Dockerfile Best Practices<a class="headerlink" href="#dockerfile-best-practices" title="Link to this heading">¶</a></h1>
+</section>
+<section id="docker-compose-in-depth">
+<h1>12.Docker Compose in Depth<a class="headerlink" href="#docker-compose-in-depth" title="Link to this heading">¶</a></h1>
+</section>
+<section id="docker-swarm-and-orchestration">
+<h1>13.Docker Swarm and Orchestration<a class="headerlink" href="#docker-swarm-and-orchestration" title="Link to this heading">¶</a></h1>
+</section>
+<section id="containerizing-applications">
+<h1>14.Containerizing Applications<a class="headerlink" href="#containerizing-applications" title="Link to this heading">¶</a></h1>
+</section>
+<section id="monitoring-and-logging">
+<h1>15.Monitoring and Logging<a class="headerlink" href="#monitoring-and-logging" title="Link to this heading">¶</a></h1>
+</section>
+<section id="troubleshooting-and-debugging">
+<h1>16.Troubleshooting and Debugging<a class="headerlink" href="#troubleshooting-and-debugging" title="Link to this heading">¶</a></h1>
+</section>
+<section id="continuous-integration-and-deployment-ci-cd-with-docker">
+<h1>17.Continuous Integration and Deployment (CI/CD) with Docker<a class="headerlink" href="#continuous-integration-and-deployment-ci-cd-with-docker" title="Link to this heading">¶</a></h1>
+</section>
+<section id="docker-ecosystem-tools">
+<h1>18.Docker Ecosystem Tools<a class="headerlink" href="#docker-ecosystem-tools" title="Link to this heading">¶</a></h1>
+</section>
+<section id="docker-and-cloud-platforms">
+<h1>19.Docker and Cloud Platforms<a class="headerlink" href="#docker-and-cloud-platforms" title="Link to this heading">¶</a></h1>
+</section>
+<section id="case-studies-and-real-world-examples">
+<h1>20.Case Studies and Real-World Examples<a class="headerlink" href="#case-studies-and-real-world-examples" title="Link to this heading">¶</a></h1>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Welcome to CM’s DevOps documentation!</a></li>
+<li><a class="reference internal" href="#introduction-to-containers-and-docker">1.Introduction to Containers and Docker</a></li>
+<li><a class="reference internal" href="#installation-and-setup">2.Installation and Setup</a></li>
+<li><a class="reference internal" href="#docker-basics">3.Docker Basics</a></li>
+<li><a class="reference internal" href="#creating-docker-images">4.Creating Docker Images</a></li>
+<li><a class="reference internal" href="#container-management">5.Container Management</a></li>
+<li><a class="reference internal" href="#docker-compose">6.Docker Compose</a></li>
+<li><a class="reference internal" href="#advanced-image-techniques">7.Advanced Image Techniques</a></li>
+<li><a class="reference internal" href="#networking-in-docker">8.Networking in Docker</a></li>
+<li><a class="reference internal" href="#data-management-with-volumes">9.Data Management with Volumes</a></li>
+<li><a class="reference internal" href="#docker-security">10.Docker Security</a></li>
+<li><a class="reference internal" href="#dockerfile-best-practices">11.Dockerfile Best Practices</a></li>
+<li><a class="reference internal" href="#docker-compose-in-depth">12.Docker Compose in Depth</a></li>
+<li><a class="reference internal" href="#docker-swarm-and-orchestration">13.Docker Swarm and Orchestration</a></li>
+<li><a class="reference internal" href="#containerizing-applications">14.Containerizing Applications</a></li>
+<li><a class="reference internal" href="#monitoring-and-logging">15.Monitoring and Logging</a></li>
+<li><a class="reference internal" href="#troubleshooting-and-debugging">16.Troubleshooting and Debugging</a></li>
+<li><a class="reference internal" href="#continuous-integration-and-deployment-ci-cd-with-docker">17.Continuous Integration and Deployment (CI/CD) with Docker</a></li>
+<li><a class="reference internal" href="#docker-ecosystem-tools">18.Docker Ecosystem Tools</a></li>
+<li><a class="reference internal" href="#docker-and-cloud-platforms">19.Docker and Cloud Platforms</a></li>
+<li><a class="reference internal" href="#case-studies-and-real-world-examples">20.Case Studies and Real-World Examples</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to CM’s DevOps documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>
