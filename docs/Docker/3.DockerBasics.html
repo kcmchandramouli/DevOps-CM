@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\3.DockerBasics.0f7f418f-9ce9-412d-8adf-b5be8b1eef78.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Understanding the fundamental concepts of Docker is crucial for effectively working with containers. This section will delve into the core components of Docker, how to run your first container, essential Docker commands, and the role of Docker registry and Docker Hub.</p>
+<p><strong>i.	Docker Engine Components:</strong>
+Docker Engine is the core of the Docker platform, responsible for building, running, and managing containers. It consists of two main components:</p>
+<ul class="simple">
+<li><p><strong>Docker CLI (Command Line Interface):</strong> The command-line tool that allows users to interact with Docker. It provides a set of commands to manage images, containers, networks, volumes, and more.</p></li>
+<li><p><strong>Docker Daemon:</strong> The background service that manages Docker containers. It handles container execution, image management, networking, and other core functionalities. The Docker Daemon listens for Docker API requests and carries out the requested actions.</p></li>
+</ul>
+<p><strong>ii.	Running Your First Container:</strong>
+To run your first Docker container, follow these steps:</p>
+<ul class="simple">
+<li><p>Open a terminal or command prompt.</p></li>
+<li><p><strong>Pull an image from Docker Hub (if not already present on your system):</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">hello-world</span></code></p></li>
+<li><p><strong>Run a container using the pulled image:</strong> <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code></p></li>
+<li><p>You’ll see a message indicating that the container is running and has successfully executed.The output will provide information about Docker’s basic functionality.</p></li>
+</ul>
+<p><strong>iii.    Basic Docker Commands:</strong>
+Here are some of the basic Docker commands you’ll frequently use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run:</span></code> Create and start a container from an image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull:</span></code> Download an image from a registry.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images:</span></code> List available images on your system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps:</span></code> List running containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a:</span></code> List all containers, including stopped ones.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec:</span></code> Run a command in a running container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop:</span></code> Stop a running container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start:</span></code> Start a stopped container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm:</span></code> Remove a container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi:</span></code> Remove an image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs:</span></code> Display the logs of a container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect:</span></code> Display detailed information about a container or image.</p></li>
+</ul>
+<p><strong>iv.	Docker Registry and Docker Hub:</strong>
+A Docker registry is a repository for storing Docker images. The most well-known registry is Docker Hub, which hosts a wide variety of public Docker images. Docker Hub allows you to pull images for various software and services without having to build them from scratch.</p>
+<ul class="simple">
+<li><p><strong>Docker Registry:</strong> A service that stores and manages Docker images. You can use public registries like Docker Hub or set up private registries for your organization.</p></li>
+<li><p><strong>Docker Hub:</strong> A cloud-based public registry that hosts a vast collection of Docker images shared by the community. It’s a go-to resource for finding pre-built images.</p></li>
+<li><p><strong>Docker Pull:</strong> The command to download images from a Docker registry. For example:    docker pull nginx.</p></li>
+<li><p><strong>Docker Push:</strong> The command to upload your own Docker images to a registry, typically used for private images: <strong>docker push username/image-name:tag</strong></p></li>
+</ul>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/3.DockerBasics.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

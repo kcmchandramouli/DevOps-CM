@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\1.Introduction.cc32cb5d-5fd4-46dd-90a2-a751bd989645.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Containerization is a technology that allows you to package an application and its dependencies into a standardized unit called a container. Containers provide a consistent runtime environment, ensuring that the application runs the same way across different environments, be it development, testing, or production. Docker is a leading platform that enables containerization, revolutionizing the way applications are developed, deployed, and managed.</p>
+<p><strong>i. Understanding containerization:</strong>
+Containerization solves the problem of “it works on my machine” by encapsulating an application, its libraries, dependencies, and runtime environment into a single unit. This unit, the container, is isolated from the host system and other containers, ensuring consistent behavior regardless of the underlying infrastructure.</p>
+<p><strong>Key features of containerization include:</strong></p>
+<ul class="simple">
+<li><p><strong>Isolation:</strong> Containers provide process and filesystem isolation, allowing applications to run without interfering with each other. This isolation also enhances security.</p></li>
+<li><p><strong>Portability:</strong> Containers can run on any system that supports the container runtime, making it easy to move applications between different environments.</p></li>
+<li><p><strong>Resource Efficiency:</strong> Containers share the host OS kernel, reducing overhead compared to virtual machines.</p></li>
+<li><p><strong>Rapid Deployment:</strong> Containers start quickly, making them ideal for dynamic scaling and microservices architecture.</p></li>
+<li><p><strong>Consistency:</strong> Containerization ensures that the application’s runtime environment is consistent across various stages of the development and deployment pipeline.</p></li>
+</ul>
+<p><strong>ii. Benefits of Docker:</strong></p>
+<p>Docker, as a containerization platform, offers several advantages:</p>
+<ul class="simple">
+<li><p><strong>Efficiency:</strong> Docker containers share the host OS kernel, reducing resource consumption compared to virtual machines, which require separate OS instances.</p></li>
+<li><p><strong>Portability:</strong> Docker containers are self-contained units that can run consistently across different environments, from a developer’s laptop to a production server.</p></li>
+<li><p><strong>Isolation:</strong> Containers provide process and filesystem isolation, enhancing security and minimizing conflicts between applications.</p></li>
+<li><p><strong>Consistency:</strong> Docker ensures that the development, testing, and production environments are identical, reducing the likelihood of “it works on my machine” issues.</p></li>
+<li><p><strong>Version Control:</strong> Docker images are versioned, enabling reproducible builds and simplifying rollbacks.</p></li>
+<li><p><strong>Scalability:</strong> Docker enables dynamic scaling by quickly starting and stopping containers as needed.</p></li>
+<li><p><strong>DevOps Integration:</strong> Docker facilitates the DevOps approach by streamlining the process of packaging, deploying, and managing applications.</p></li>
+<li><p><strong>Microservices:</strong> Docker is well-suited for building and managing microservices architectures due to its lightweight nature and efficient scaling.</p></li>
+</ul>
+<p><strong>iii. Docker vs. Virtual Machines:</strong></p>
+<p>While both Docker containers and virtual machines (VMs) offer isolation and encapsulation, there are key differences:</p>
+<p><strong>Docker Containers:</strong></p>
+<ul class="simple">
+<li><p>Share the host OS kernel, making them lightweight.</p></li>
+<li><p>Start quickly, often in milliseconds.</p></li>
+<li><p>Use less memory and disk space compared to VMs.</p></li>
+<li><p>Have less overhead due to shared resources.</p></li>
+<li><p>Require less management and maintenance.</p></li>
+<li><p>Suitable for microservices architecture and dynamic scaling.</p></li>
+</ul>
+<p><strong>Virtual Machines:</strong></p>
+<ul class="simple">
+<li><p>Run a complete guest OS on top of the host OS.</p></li>
+<li><p>Take longer to start, typically in seconds or more.</p></li>
+<li><p>Consume more memory and disk space.</p></li>
+<li><p>Have higher overhead due to separate OS instances.</p></li>
+<li><p>Require more management and maintenance.</p></li>
+<li><p>Suitable for running multiple applications with different OS requirements.</p></li>
+</ul>
+<p>In summary, Docker’s containerization approach offers greater efficiency, portability, and scalability compared to traditional virtual machines. Docker’s lightweight nature and consistent environments make it an ideal choice for modern application development and deployment.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/1.Introduction.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\2.InstallationAndSetup.8ed5ea1c-04c3-487c-84cd-0ef7720c58fa.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Installing Docker involves setting up the Docker Engine, which includes the Docker CLI (Command Line Interface) and the Docker Daemon (server). Here’s a detailed guide on how to install Docker on Linux, macOS, and Windows, along with basic configuration and settings.</p>
+<p><strong>i.Installing Docker on Linux:</strong></p>
+<p>Docker can be installed on various Linux distributions using package managers. The instructions may slightly vary depending on the distribution, but the general steps are as follows:</p>
+<ul class="simple">
+<li><p>Update the package index:   <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p></li>
+<li><p>Install necessary packages to allow the use of Docker repositories over HTTPS:	<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apt-transport-https</span> <span class="pre">ca-certificates</span> <span class="pre">curl</span> <span class="pre">software-properties-common</span></code></p></li>
+<li><p>Add the Docker GPG key:	<code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-fsSL</span> <span class="pre">https://download.docker.com/linux/ubuntu/gpg</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">gpg</span> <span class="pre">--dearmor</span> <span class="pre">-o</span> <span class="pre">/usr/share/keyrings/docker-archive-keyring.gpg</span></code></p></li>
+<li><p>Add the Docker repository:  <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;deb</span> <span class="pre">[signed-by=/usr/share/keyrings/docker-archive-keyring.gpg]</span> <span class="pre">https://download.docker.com/linux/ubuntu</span> <span class="pre">$(lsb_release</span> <span class="pre">-cs)</span> <span class="pre">stable&quot;</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">tee</span> <span class="pre">/etc/apt/sources.list.d/docker.list</span> <span class="pre">&gt;</span> <span class="pre">/dev/null</span></code></p></li>
+<li><p>Update the package index again and install Docker:	<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">docker-ce</span> <span class="pre">docker-ce-cli</span> <span class="pre">containerd.io</span></code></p></li>
+<li><p>Start and enable the Docker service:    <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">docker</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">docker</span></code></p></li>
+</ul>
+<p><strong>ii.	Installing Docker on macOS:</strong></p>
+<p>Docker Desktop provides an easy way to install and run Docker on macOS:</p>
+<ul class="simple">
+<li><p>Download Docker Desktop for macOS from the Docker website.</p></li>
+<li><p>Double-click the downloaded .dmg file to open the installer.</p></li>
+<li><p>Drag the Docker application to the Applications folder.</p></li>
+<li><p>Open Docker from the Applications folder. It will guide you through the setup process.</p></li>
+</ul>
+<p><strong>iii.	Installing Docker on Windows:</strong></p>
+<p>Docker Desktop is also available for Windows and provides a user-friendly installation process:</p>
+<ul class="simple">
+<li><p>Download Docker Desktop for Windows from the Docker website.</p></li>
+<li><p>Double-click the downloaded .exe file to start the installer.</p></li>
+<li><p>Follow the installer’s instructions to complete the installation.</p></li>
+</ul>
+<p><strong>Basic Configuration and Settings:</strong></p>
+<p>After installing Docker, there are a few basic configurations you might want to consider:</p>
+<ul class="simple">
+<li><p>Running Docker Without Sudo (Linux only):
+By default, Docker commands require root privileges. You can add your user to the docker group to run Docker commands without sudo: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-aG</span> <span class="pre">docker</span> <span class="pre">$USER</span></code></p></li>
+<li><p>Docker Daemon Configuration:
+Docker’s daemon configuration is usually stored in a configuration file (e.g., /etc/docker/daemon.json on Linux). You can customize settings such as storage options, network settings, and more.</p></li>
+<li><p>Resource Limits:
+You can set resource limits (CPU, memory) for containers to prevent them from consuming excessive resources.</p></li>
+<li><p>Network Configuration:
+Docker provides various network modes. You can configure Docker’s networking options based on your needs, such as bridge networks or user-defined networks.</p></li>
+<li><p>Registry Configuration:
+Docker images are typically pulled from Docker Hub, but you can also configure Docker to use other registries.</p></li>
+<li><p>Proxy Settings:
+If you’re behind a proxy, you might need to configure Docker to work through it.</p></li>
+<li><p>Authentication and Security:
+You can configure authentication settings to securely pull and push images from/to Docker Hub or other registries.</p></li>
+</ul>
+<p>Remember that these are just some basic configuration options. Docker offers extensive customization to suit your needs but be cautious while modifying configuration files to avoid unintended issues. Always consult Docker’s official documentation for more detailed information and best practices regarding setup and configuration.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/2.InstallationAndSetup.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

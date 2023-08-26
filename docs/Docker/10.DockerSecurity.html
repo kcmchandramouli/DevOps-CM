@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\10.DockerSecurity.4ff5a35b-3347-44db-86ab-a781e8d9cf9c.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Ensuring the security of Docker containers is paramount to safeguarding your applications and data. This section explores Docker’s security features, best practices for securing containers, vulnerability scanning, and advancements in user namespaces and rootless Docker for enhanced security.</p>
+<p><strong>Container Isolation and Security Features:</strong></p>
+<p>Docker provides several security features to isolate containers from the host system and other containers:</p>
+<ol class="arabic simple">
+<li><p><strong>Namespace Isolation:</strong> Docker uses Linux namespaces to isolate containers’ process, network, filesystem, and other resources. This prevents processes within one container from accessing resources of other containers.</p></li>
+<li><p><strong>Control Groups (Cgroups):</strong> Docker uses cgroups to limit and manage the resources (CPU, memory, etc.) that containers can consume.</p></li>
+<li><p><strong>Read-Only Filesystems:</strong> You can set containers to use read-only filesystems to prevent tampering or unauthorized modification.</p></li>
+<li><p><strong>AppArmor and SELinux:</strong> Docker supports AppArmor and SELinux security profiles for enforcing fine-grained access controls on container processes.</p></li>
+<li><p><strong>Seccomp Profiles:</strong> Seccomp allows restricting system calls that a container can make, reducing the attack surface.</p></li>
+<li><p><strong>User and Group Isolation:</strong> Containers can run as non-root users, minimizing potential damage from security breaches.</p></li>
+</ol>
+<p><strong>Best Practices for Securing Docker Containers:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Use Official Images:</strong> Choose official images from Docker Hub or trusted repositories. Official images are maintained, updated, and generally more secure.</p></li>
+<li><p><strong>Regular Updates:</strong> Keep your base images, applications, and libraries up to date to address security vulnerabilities.</p></li>
+<li><p><strong>Least Privilege:</strong> Run containers with minimal privileges and only the necessary capabilities.</p></li>
+<li><p><strong>Isolate Networks:</strong> Use user-defined networks to isolate containers and control communication between them.</p></li>
+<li><p><strong>Volume Permissions:</strong> Apply appropriate permissions to mounted volumes to prevent unauthorized access to data.</p></li>
+<li><p><strong>Limit Resources:</strong> Set resource limits (CPU, memory) to prevent containers from consuming excessive resources.</p></li>
+<li><p><strong>Container Scanning:</strong> Regularly scan images for vulnerabilities before deploying them. Consider using security scanning tools like Clair or Trivy.</p></li>
+</ol>
+<p><strong>Scanning Images for Vulnerabilities:</strong></p>
+<p>To scan images for vulnerabilities, you can use various tools like Anchore, Aqua Trivy, or Clair. These tools analyze the software packages within an image and identify any known vulnerabilities. By incorporating vulnerability scanning into your CI/CD pipeline, you can catch vulnerabilities early in the development process.</p>
+<p><strong>User Namespaces and Rootless Docker:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>User Namespaces:</strong> User namespaces allow you to map user and group IDs inside a container to different IDs outside the container, enhancing isolation and security. This reduces the impact of potential privilege escalation attacks.</p></li>
+<li><p><strong>Rootless Docker:</strong> Rootless Docker runs the Docker daemon and containers with reduced privileges, decreasing the attack surface. It’s particularly useful for scenarios where running Docker as root is undesirable.</p></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>Docker provides various security features and best practices to ensure the security of your containerized applications. By understanding and implementing container isolation, resource limits, network segregation, and image scanning, you can significantly enhance the security posture of your Docker environment. User namespaces and rootless Docker further advance security by reducing the potential attack surface and minimizing the impact of security breaches. Staying vigilant, adopting security best practices, and regularly updating your container images are essential steps in maintaining the integrity and safety of your Dockerized applications.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/10.DockerSecurity.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

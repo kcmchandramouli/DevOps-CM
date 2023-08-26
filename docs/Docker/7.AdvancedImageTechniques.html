@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\7.AdvancedImageTechniques.adabf3a3-e5a5-436e-8144-2bcbccf0ca98.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>As you delve deeper into Docker, you’ll encounter advanced techniques that allow you to optimize your Docker images for efficiency, security, and maintainability. This section covers multi-stage builds, optimizing image size, image tagging and versioning, and pushing/pulling images from Docker Hub.</p>
+<p><strong>1.Using Multi-Stage Builds:</strong></p>
+<p>Multi-stage builds are a powerful feature of Docker that allow you to create more efficient and smaller images. This technique involves defining multiple build stages in a single Dockerfile. Each stage can have its own base image and set of instructions. It’s particularly useful for compiling code and then copying only the necessary artifacts into the final image.</p>
+<p>Here’s a simplified example of a multi-stage build for a Go application:</p>
+<p>.. code-block:: Dockerfile</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Build stage
+FROM golang:1.16 AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o myapp
+
+# Final stage
+FROM alpine:latest
+WORKDIR /app
+COPY --from=builder /app/myapp .
+CMD [&quot;./myapp&quot;]
+</pre></div>
+</div>
+<p><strong>2.Optimizing Image Size:</strong></p>
+<p>Optimizing image size is important for faster deployments and reduced storage costs. Here are some strategies:</p>
+<ul class="simple">
+<li><p><strong>Use Official Base Images:</strong> Official images are often optimized and regularly updated.</p></li>
+<li><p><strong>Minimize Layers:</strong> Combine commands in your Dockerfile to minimize the number of layers. This reduces the size of the image.</p></li>
+<li><p><strong>Alpine Linux:</strong> Alpine Linux is a lightweight base image that results in smaller images.</p></li>
+<li><p><strong>Remove Unnecessary Files:</strong> Clean up unnecessary files after installing packages or building the application.</p></li>
+<li><p><strong>Multi-Stage Builds:</strong> As mentioned earlier, multi-stage builds allow you to create smaller images by only copying necessary files.</p></li>
+</ul>
+<p><strong>3.Docker Image Tagging and Versioning:</strong></p>
+<p>Tagging and versioning your Docker images helps track and manage different versions of your application. Tags are labels attached to images that indicate a specific version or configuration.</p>
+<ul class="simple">
+<li><p><strong>Tagging:</strong> Use the -t flag when building an image to assign a tag. For example:   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">myapp:latest</span> <span class="pre">.</span></code></p></li>
+<li><p><strong>Versioning:</strong> Tags can include version numbers, release dates, or other meaningful identifiers. For example:  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">myapp:1.0.0</span> <span class="pre">.</span></code></p></li>
+</ul>
+<p><strong>4.Pushing and Pulling Images from Docker Hub:</strong></p>
+<p>Docker Hub is a central repository for Docker images. You can push your custom images to Docker Hub for sharing and distribution.</p>
+<ul class="simple">
+<li><p><strong>Pushing Images:</strong></p>
+<ul>
+<li><p>Log in to Docker Hub using docker login.</p></li>
+<li><p>Tag your image with your Docker Hub username and desired repository name.</p></li>
+<li><p>Push the tagged image to Docker Hub:    <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">username/repository:tag</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Pulling Images:</strong></p>
+<ul>
+<li><p>To pull an image from Docker Hub:   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">username/repository:tag</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Advanced Docker image techniques provide you with the tools to create efficient, optimized, and well-organized images. Multi-stage builds streamline the image creation process, while image size optimization enhances deployment efficiency. Proper tagging and versioning allow for easy tracking and management of image versions. Pushing and pulling images from Docker Hub facilitate sharing your custom images with the community or within your organization. By mastering these techniques, you can enhance your Docker image management skills and create more efficient and reliable containerized applications.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/7.AdvancedImageTechniques.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>
