@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\9.DataManagementWithVolumes.04100a3e-6619-498f-a82a-435e329c0de4.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Managing data within Docker containers is a challenge due to the ephemeral nature of containers. Docker volumes provide a solution by enabling persistent data storage and sharing between containers and the host system. This section explains Docker volumes, the differences between bind mounts and volumes, and how volumes facilitate persistent data storage.</p>
+<p><strong>Introduction to Docker Volumes:</strong></p>
+<p>Docker volumes are directories or file systems that exist outside of a container’s file system and can be mounted into containers. They allow data to persist even when containers are stopped or removed. Volumes provide a way to separate data from the container, making it easier to manage, backup, and share data.</p>
+<p><strong>Bind Mounts vs. Volumes:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Bind Mounts:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Bind mounts allow you to mount a specific file or directory from the host into a container. The container can read and write data directly to the host’s file system.</p></li>
+<li><p>Useful for sharing files between the host and container, but not recommended for long-term data storage or cross-host data sharing.</p></li>
+<li><p>Offers less isolation between the host and container compared to volumes.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Volumes:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Volumes are managed by Docker and stored outside of the container’s file system. They offer better data separation and persistence.</p></li>
+<li><p>Ideal for persistent data storage, backups, and sharing data between containers.</p></li>
+<li><p>Provides better integration with Docker’s tooling, such as data volume containers and Docker Compose.</p></li>
+</ul>
+<p><strong>Persistent Data Storage Using Volumes:</strong></p>
+<p>To use volumes for persistent data storage:</p>
+<ul class="simple">
+<li><p><strong>Creating a Volume:</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">create</span> <span class="pre">myvolume</span></code></p></li>
+<li><p><strong>Mounting a Volume in a Container:</strong>   <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">myvolume:/path/in/container</span> <span class="pre">myimage</span></code></p></li>
+<li><p><strong>Inspecting a Volume:</strong>    <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">inspect</span> <span class="pre">myvolume</span></code></p></li>
+<li><p><strong>Removing a Volume:</strong>  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">rm</span> <span class="pre">myvolume</span></code></p></li>
+</ul>
+<p><strong>Using Volumes in Docker Compose:</strong></p>
+<p>Docker Compose provides a convenient way to manage volumes within your application’s stack. You can define volumes in your docker-compose.yml file and attach them to services:</p>
+<p>.. code-block:: yaml</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version: &#39;3&#39;
+services:
+app:
+    image: myapp
+    volumes:
+    - myvolume:/path/in/container
+volumes:
+myvolume:
+</pre></div>
+</div>
+<p><strong>Volume Types:</strong></p>
+<p>Docker supports several volume types:</p>
+<ul class="simple">
+<li><p>Local Volumes: Stored on the host’s file system, these volumes are managed by Docker and can be shared among containers.</p></li>
+<li><p>Named Volumes: Managed by Docker and assigned a name. They offer better management and are recommended for most use cases.</p></li>
+<li><p>Anonymous Volumes: Similar to named volumes, but without a user-defined name. They are often used for temporary data.</p></li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Docker volumes play a critical role in managing data within containers, enabling persistent storage, backups, and data sharing. They provide a way to separate data from the ephemeral nature of containers, enhancing data management and making it easier to build reliable and resilient applications. By understanding the differences between bind mounts and volumes and leveraging volumes effectively, you can ensure that your containers have access to the necessary data while maintaining data persistence and integrity.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/9.DataManagementWithVolumes.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

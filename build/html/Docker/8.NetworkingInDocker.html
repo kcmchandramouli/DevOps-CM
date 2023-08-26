@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\8.NetworkingInDocker.536279c6-e7fd-4cef-b788-594f29be5ffb.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Networking is a crucial aspect of containerization, allowing containers to communicate with each other and external systems. Docker provides various networking modes and features to manage container networking efficiently. This section covers Docker’s networking modes, creating user-defined networks, and utilizing network aliases for DNS resolution.</p>
+<p><strong>Docker Networking Modes:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Bridge Network:</strong> The default networking mode for containers. Containers on the same bridge network can communicate with each other using internal IP addresses. Containers are isolated from the host and other networks unless explicitly configured.</p></li>
+<li><p><strong>Host Network:</strong> In this mode, containers share the host’s networking stack, including its IP address and network interfaces. This mode offers better performance but may introduce potential security risks.</p></li>
+<li><p><strong>Overlay Network:</strong> Overlay networks are used for connecting containers across multiple Docker hosts. They are mainly used in swarm mode for orchestrating services across a cluster of machines.</p></li>
+</ol>
+<p><strong>Creating and Managing User-Defined Networks:</strong></p>
+<p>User-defined networks provide better isolation, security, and flexibility compared to the default bridge network. They allow containers to communicate using DNS names or service discovery. To create and manage user-defined networks:</p>
+<ul class="simple">
+<li><p>Creating a Network:     docker network create mynetwork</p></li>
+<li><p>Connecting Containers to a Network:     docker run –network=mynetwork myimage</p></li>
+<li><p>Inspecting a Network:       docker network inspect mynetwork</p></li>
+<li><p>Removing a Network:     docker network rm mynetwork</p></li>
+</ul>
+<p><strong>Network Aliases and DNS Resolution:</strong></p>
+<p>Network aliases and DNS resolution enhance container communication by allowing you to refer to containers by their service name within the same network.</p>
+<ol class="arabic simple">
+<li><p><strong>Network Aliases:</strong> Containers in the same network can have multiple network aliases. This is useful when you want a container to be reachable by multiple names.</p></li>
+<li><p><strong>DNS Resolution:</strong> Containers in the same user-defined network can resolve each other’s DNS names using their service names. This simplifies communication and eliminates the need to remember IP addresses.</p></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>Networking is a critical component of Docker that enables containers to communicate and interact effectively. Understanding the different networking modes, creating user-defined networks, and utilizing network aliases and DNS resolution enhances container communication, security, and isolation. Docker’s networking features allow you to build complex applications while maintaining robust and isolated networking environments.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/8.NetworkingInDocker.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+Understanding the fundamental concepts of Docker is crucial for effectively working with containers. This section will delve into the core components of Docker, how to run your first container, essential Docker commands, and the role of Docker registry and Docker Hub.
+
+**i.	Docker Engine Components:**
+Docker Engine is the core of the Docker platform, responsible for building, running, and managing containers. It consists of two main components:
+
+-   **Docker CLI (Command Line Interface):** The command-line tool that allows users to interact with Docker. It provides a set of commands to manage images, containers, networks, volumes, and more.
+
+-   **Docker Daemon:** The background service that manages Docker containers. It handles container execution, image management, networking, and other core functionalities. The Docker Daemon listens for Docker API requests and carries out the requested actions.
+
+**ii.	Running Your First Container:**
+To run your first Docker container, follow these steps:
+-   Open a terminal or command prompt.
+
+-   **Pull an image from Docker Hub (if not already present on your system):**  ``docker pull hello-world``
+
+-   **Run a container using the pulled image:** ``docker run hello-world``
+
+-   You'll see a message indicating that the container is running and has successfully executed.The output will provide information about Docker's basic functionality.
+
+**iii.    Basic Docker Commands:**
+Here are some of the basic Docker commands you'll frequently use:
+-   ``docker run:`` Create and start a container from an image.
+
+-   ``docker pull:`` Download an image from a registry.
+
+-   ``docker images:`` List available images on your system.
+
+-   ``docker ps:`` List running containers.
+
+-   ``docker ps -a:`` List all containers, including stopped ones.
+
+-   ``docker exec:`` Run a command in a running container.
+
+-   ``docker stop:`` Stop a running container.
+
+-   ``docker start:`` Start a stopped container.
+
+-   ``docker rm:`` Remove a container.
+
+-   ``docker rmi:`` Remove an image.
+
+-   ``docker logs:`` Display the logs of a container.
+
+-   ``docker inspect:`` Display detailed information about a container or image.
+
+**iv.	Docker Registry and Docker Hub:**
+A Docker registry is a repository for storing Docker images. The most well-known registry is Docker Hub, which hosts a wide variety of public Docker images. Docker Hub allows you to pull images for various software and services without having to build them from scratch.
+
+-   **Docker Registry:** A service that stores and manages Docker images. You can use public registries like Docker Hub or set up private registries for your organization.
+
+-   **Docker Hub:** A cloud-based public registry that hosts a vast collection of Docker images shared by the community. It's a go-to resource for finding pre-built images.
+
+-   **Docker Pull:** The command to download images from a Docker registry. For example:    docker pull nginx.
+
+-   **Docker Push:** The command to upload your own Docker images to a registry, typically used for private images: **docker push username/image-name:tag**

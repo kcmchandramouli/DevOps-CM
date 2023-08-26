@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\5.ContainerManagement.2802a8ce-4c8f-40aa-9870-864d75bf5582.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Managing containers effectively is essential to leverage the benefits of Docker. This section covers the container lifecycle, Docker run options for configuration, and techniques for working with multiple containers.</p>
+<p><strong>Container Lifecycle:</strong>
+Containers have a lifecycle that includes several states: created, running, paused, restarting, and stopped. Understanding these states is crucial for proper container management.</p>
+<ul class="simple">
+<li><p><strong>Create:</strong> Containers are created from Docker images using the docker create command. This command sets up a container but doesn’t start it.</p></li>
+<li><p><strong>Start:</strong> The docker start command initiates a stopped container. Containers can also be created and started in a single step using the docker run command.</p></li>
+<li><p><strong>Pause:</strong> The docker pause command suspends a container’s processes, allowing it to be temporarily halted without stopping it.</p></li>
+<li><p><strong>Unpause/Resume:</strong> The docker unpause command resumes a paused container’s processes.</p></li>
+<li><p><strong>Stop:</strong> The docker stop command gracefully stops a running container, allowing it to shut down processes and save state. You can specify a time limit for graceful termination. Use docker kill for an immediate stop.</p></li>
+<li><p><strong>Remove:</strong> The docker rm command deletes a stopped container. Use the -f flag to remove a running container forcefully.</p></li>
+</ul>
+<p><strong>Docker Run Options:</strong></p>
+<p>The docker run command offers a variety of options to configure container behavior:</p>
+<ul class="simple">
+<li><p><strong>Port Mapping:</strong> Use the -p flag to map ports between the host and the container. For example, -p 8080:80 maps port 8080 on the host to port 80 in the container.</p></li>
+<li><p><strong>Environment Variables:</strong> Pass environment variables to containers using the -e flag. For example, -e MY_VARIABLE=my_value.</p></li>
+<li><p><strong>Volumes:</strong> Mount volumes between the host and container using the -v flag. This allows persistent storage and data sharing.</p></li>
+<li><p><strong>Detached Mode:</strong> Run containers in the background by adding the -d flag to the docker run command.</p></li>
+<li><p><strong>Interactive Mode:</strong> Use the -it flags together to start an interactive session in the container, allowing direct interaction with processes.</p></li>
+<li><p><strong>Container Name:</strong> Assign a custom name to the container using the –name flag.</p></li>
+</ul>
+<p><strong>Working with Multiple Containers:</strong></p>
+<p>Containers often work together to form complete applications. Docker provides several features for managing interactions between multiple containers.</p>
+<ul class="simple">
+<li><p><strong>Linking Containers:</strong> Container linking is an older technique that allows one container to reference another by name. However, this method is now mostly replaced by user-defined networks.</p></li>
+<li><p><strong>Networking:</strong> Docker supports various networking modes. Containers on the same network can communicate using container names as hostnames.</p></li>
+<li><p><strong>User-Defined Networks:</strong> Creating a user-defined network with the docker network create command allows containers to communicate by their service names. This offers better isolation and control than container linking.</p></li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>Proper container management is essential for efficiently running and maintaining your Dockerized applications. Understanding the container lifecycle, configuring container options with docker run, and implementing effective container communication methods will help you build and manage robust, scalable, and well-connected containerized applications.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/5.ContainerManagement.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FROM: Specifies the base image. &#8212; Docker documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=323e3408"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy\Docker\4.CreatingDockerImages.19216745-40ad-4b5b-904b-4bde37c90a54.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FROM: Specifies the base image.</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Creating Docker images is a fundamental skill in the Docker ecosystem. Images serve as blueprints for containers, encapsulating an application’s code, dependencies, and configuration. This section will cover creating images using Dockerfiles, understanding Dockerfile syntax, best practices, building images, and the concepts of image layers and caching.</p>
+<p><strong>1.Introduction to Dockerfile:</strong></p>
+<p>A Dockerfile is a text file that contains a set of instructions for building a Docker image. It defines the environment, packages, configurations, and commands necessary to create an image that can be run as a container. Dockerfiles enable reproducible and consistent image builds.</p>
+<p><strong>2.Dockerfile Syntax and Best Practices:</strong></p>
+<ul class="simple">
+<li><p><strong>Base Image:</strong> Start with a base image that provides the foundation for your application. Use official images from Docker Hub when available.</p></li>
+<li><p><strong>Instructions:</strong></p></li>
+</ul>
+<p>.. code-block:: Dockerfile</p>
+<section id="from-specifies-the-base-image">
+<h1>FROM: Specifies the base image.<a class="headerlink" href="#from-specifies-the-base-image" title="Link to this heading">¶</a></h1>
+</section>
+<section id="run-executes-commands-in-the-image-during-build">
+<h1>RUN: Executes commands in the image during build.<a class="headerlink" href="#run-executes-commands-in-the-image-during-build" title="Link to this heading">¶</a></h1>
+</section>
+<section id="copy-or-add-copies-files-and-directories-from-the-host-into-the-image">
+<h1>COPY or ADD: Copies files and directories from the host into the image.<a class="headerlink" href="#copy-or-add-copies-files-and-directories-from-the-host-into-the-image" title="Link to this heading">¶</a></h1>
+</section>
+<section id="workdir-sets-the-working-directory-for-subsequent-instructions">
+<h1>WORKDIR: Sets the working directory for subsequent instructions.<a class="headerlink" href="#workdir-sets-the-working-directory-for-subsequent-instructions" title="Link to this heading">¶</a></h1>
+</section>
+<section id="env-sets-environment-variables-in-the-image">
+<h1>ENV: Sets environment variables in the image.<a class="headerlink" href="#env-sets-environment-variables-in-the-image" title="Link to this heading">¶</a></h1>
+</section>
+<section id="expose-documents-which-ports-the-container-listens-on">
+<h1>EXPOSE: Documents which ports the container listens on.<a class="headerlink" href="#expose-documents-which-ports-the-container-listens-on" title="Link to this heading">¶</a></h1>
+</section>
+<section id="cmd-or-entrypoint-defines-the-default-command-when-the-container-starts">
+<h1>CMD or ENTRYPOINT: Defines the default command when the container starts.<a class="headerlink" href="#cmd-or-entrypoint-defines-the-default-command-when-the-container-starts" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Layering:</strong> Each instruction in a Dockerfile creates a new layer in the image. Layers are reusable and cached, allowing faster image builds.</p></li>
+<li><p><strong>Minimize Layers:</strong> Combine commands using &amp;&amp; to minimize layers. This reduces the final image size and build time.</p></li>
+<li><p><strong>Clear and Concise:</strong> Keep the Dockerfile readable and concise. Use comments to explain complex or important parts.</p></li>
+<li><p><strong>Order of Operations:</strong> Place frequently changing instructions (e.g., COPY or ADD) at the end of the Dockerfile to utilize Docker’s build caching efficiently.</p></li>
+<li><p><strong>Avoid Unnecessary Files:</strong> Exclude unnecessary files from the image. Use .dockerignore to specify files that shouldn’t be included.</p></li>
+</ul>
+<p><strong>3.Building Images using Dockerfile:</strong></p>
+<p>To build an image using a Dockerfile:</p>
+<ul class="simple">
+<li><p>Create a text file named Dockerfile (with no file extension) in your application’s directory.</p></li>
+<li><p>Write the necessary instructions in the Dockerfile. For example:</p></li>
+</ul>
+<p>.. code-block:: Dockerfile</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    # Use an official Python runtime as the base image
+    FROM python:3.9-slim
+
+    # Set the working directory to /app
+    WORKDIR /app
+
+    # Copy the current directory contents into the container at /app
+    COPY . /app
+
+    # Install any needed packages specified in requirements.txt
+    RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+    # Make port 80 available to the world outside this container
+    EXPOSE 80
+
+    # Define environment variable
+    ENV NAME World
+
+    # Run app.py when the container launches
+    CMD [&quot;python&quot;, &quot;app.py&quot;]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a terminal in the directory containing the Dockerfile.</p></li>
+<li><p>Build the Docker image using the docker build command:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">image-name:tag</span> <span class="pre">.</span></code></p></li>
+</ul>
+<p><strong>4.Image Layers and Caching:</strong></p>
+<p>Docker uses a layered file system for images, where each instruction in the Dockerfile creates a new layer. These layers are cached, making subsequent builds faster when instructions haven’t changed.</p>
+<ul class="simple">
+<li><p><strong>Caching:</strong> If a layer has been built before and hasn’t changed, Docker uses the cached layer instead of rebuilding it. This speeds up image creation.</p></li>
+<li><p><strong>Invalidating Cache:</strong> If an instruction changes, all subsequent layers are invalidated. To take advantage of caching, place commands that change less frequently at the beginning of the Dockerfile.</p></li>
+<li><p><strong>Efficient Layering:</strong> Minimize the number of layers by chaining commands with &amp;&amp;. This reduces the final image size and build time.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">FROM: Specifies the base image.</a></li>
+<li><a class="reference internal" href="#run-executes-commands-in-the-image-during-build">RUN: Executes commands in the image during build.</a></li>
+<li><a class="reference internal" href="#copy-or-add-copies-files-and-directories-from-the-host-into-the-image">COPY or ADD: Copies files and directories from the host into the image.</a></li>
+<li><a class="reference internal" href="#workdir-sets-the-working-directory-for-subsequent-instructions">WORKDIR: Sets the working directory for subsequent instructions.</a></li>
+<li><a class="reference internal" href="#env-sets-environment-variables-in-the-image">ENV: Sets environment variables in the image.</a></li>
+<li><a class="reference internal" href="#expose-documents-which-ports-the-container-listens-on">EXPOSE: Documents which ports the container listens on.</a></li>
+<li><a class="reference internal" href="#cmd-or-entrypoint-defines-the-default-command-when-the-container-starts">CMD or ENTRYPOINT: Defines the default command when the container starts.</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Docker/4.CreatingDockerImages.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Docker documentation 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FROM: Specifies the base image.</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Chandra Mouli.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
+    </div>
+  </body>
+</html>
